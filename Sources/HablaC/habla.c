@@ -194,11 +194,21 @@ static void habla_parser_resync(habla_parser_t *parser) {
     return;
   }
   while (parser->length > 0u) {
-    if (parser->length >= 2u &&
-        parser->buffer[0] == HABLA_MAGIC0 &&
-        parser->buffer[1] == HABLA_MAGIC1) {
+    if (parser->buffer[0] != HABLA_MAGIC0) {
+      memmove(parser->buffer, parser->buffer + 1, parser->length - 1u);
+      parser->length -= 1u;
+      continue;
+    }
+
+    /* Keep a lone leading magic byte so the next push can complete 'HB'. */
+    if (parser->length < 2u) {
       return;
     }
+
+    if (parser->buffer[1] == HABLA_MAGIC1) {
+      return;
+    }
+
     memmove(parser->buffer, parser->buffer + 1, parser->length - 1u);
     parser->length -= 1u;
   }
