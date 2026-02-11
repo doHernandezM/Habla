@@ -1,0 +1,506 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Habla-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/sources",
+      "importPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/habla.c.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Habla",
+      "moduleOutputPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/Habla.swiftmodule",
+      "objects" : [
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swift.o",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaC/include",
+        "-module-cache-path",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/include/Habla-Swift.h",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "habla"
+      ],
+      "outputFileMapPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/Habla.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift"
+      ],
+      "tempsPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.HablaExample-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/sources",
+      "importPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaExample/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/Habla.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "HablaExample",
+      "moduleOutputPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/HablaExample.swiftmodule",
+      "objects" : [
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaC/include",
+        "-module-cache-path",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "HablaExample_main",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "habla"
+      ],
+      "outputFileMapPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/HablaExample.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaExample/main.swift"
+      ],
+      "tempsPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Habla" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Habla",
+      "-package-name",
+      "habla",
+      "-c",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift",
+      "-I",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaC/include",
+      "-module-cache-path",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/include/Habla-Swift.h",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "habla",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "HablaExample" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "HablaExample",
+      "-package-name",
+      "habla",
+      "-c",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaExample/main.swift",
+      "-I",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaC/include",
+      "-module-cache-path",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "HablaExample_main",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "habla",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Habla" : [
+      "HablaC"
+    ],
+    "HablaC" : [
+
+    ],
+    "HablaExample" : [
+      "Habla",
+      "HablaC"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/sources"
+    },
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample-entitlement.plist"
+    },
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaExample/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/sources"
+    },
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/habla.c.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.product/Objects.LinkFileList"
+    },
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

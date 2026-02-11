@@ -1,0 +1,4 @@
+module HablaC {
+    umbrella "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaC/include"
+    export *
+}

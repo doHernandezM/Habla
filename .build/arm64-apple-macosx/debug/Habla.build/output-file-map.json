@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/master.swiftdeps"
+  },
+  "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift": {
+    "dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.d",
+    "object": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swift.o",
+    "swiftmodule": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys~partial.swiftmodule",
+    "swift-dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swiftdeps",
+    "diagnostics": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.dia"
+  },
+  "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift": {
+    "dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.d",
+    "object": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o",
+    "swiftmodule": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla~partial.swiftmodule",
+    "swift-dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swiftdeps",
+    "diagnostics": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.dia"
+  }
+}

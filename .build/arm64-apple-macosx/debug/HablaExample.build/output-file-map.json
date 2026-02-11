@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/master.swiftdeps"
+  },
+  "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/HablaExample/main.swift": {
+    "dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.d",
+    "object": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.swift.o",
+    "swiftmodule": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.swiftdeps",
+    "diagnostics": "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaExample.build/main.dia"
+  }
+}
