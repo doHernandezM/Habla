@@ -99,6 +99,21 @@ This registry is based on `CosasStudio/Models/CommandKeys.swift`.
 - `0x81` TEST
 - `0x82` HALT
 - `0x83` INTERRUPT
+- `0x84` PING
+
+### Ping (`0x84`) Response Payload (v1 extension)
+
+When a device receives a `PING` request, it returns a `Response` with command key `0x84`
+and payload:
+
+- byte0: status (`0x00` = OK)
+- byte1: `nameLen`
+- bytes: UTF-8 `name`
+- next byte: `versionLen`
+- bytes: UTF-8 `version`
+- next 4 bytes: `buildNumber` (uint32 little-endian)
+- next byte: `boardLen`
+- bytes: UTF-8 `board`
 
 ## Brackets (0x90-0x9F)
 

@@ -91,3 +91,25 @@ MessageType=Response, payload=[0x04]
 ```
 
 Where `0x04 = UNSUPPORTED_COMMAND`.
+
+## 6) Ping device metadata
+
+Request (`PING`, no payload):
+
+```text
+48 42 01 00 00 00 42 00 01 84 00 00 00 CRC_LO CRC_HI
+```
+
+Response payload format:
+
+- byte0 status (`0x00`)
+- byte1 `nameLen`, then `name` bytes
+- next byte `versionLen`, then `version` bytes
+- next 4 bytes `buildNumber` (uint32 LE)
+- next byte `boardLen`, then `board` bytes
+
+Example response payload:
+
+```text
+00 06 43 6f 73 61 4f 53 05 30 2e 31 2e 30 03 00 00 00 04 70 69 63 6f
+```

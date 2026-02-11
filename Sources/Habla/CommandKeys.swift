@@ -78,6 +78,7 @@ public enum CommandKey: UInt8, CaseIterable, Codable, Sendable {
   case test = 0x81
   case halt = 0x82
   case interrupt = 0x83
+  case ping = 0x84
 
   // Delimiters and custom/user buckets
   case leftBracket = 0x90
