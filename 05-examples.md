@@ -18,11 +18,7 @@ Pseudo-frame:
 48 42 01 00 01 00 10 00 01 12 01 02 00 19 01 CRC_LO CRC_HI
 ```
 
-Ack response:
-
-```text
-48 42 01 00 00 03 10 00 01 12 01 01 00 00 CRC_LO CRC_HI
-```
+No response is expected on success.
 
 ## 2) DigitalRead pin 25
 

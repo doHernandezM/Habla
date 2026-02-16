@@ -36,12 +36,18 @@ little-endian.
   - byte0 pin
   - byte1 mode (`0=input`, `1=inputPullup`, `2=inputPulldown`, `3=output`)
   - byte2 drive (`0=default`, `1=2mA`, `2=4mA`, `3=8mA`, `4=12mA`)
+- Response behavior:
+  - Success: none (fire-and-forget)
+  - Error: `NACK` with error code
 
 ### DigitalWrite (`0x12`)
 
 - Payload:
   - byte0 pin
   - byte1 value
+- Response behavior:
+  - Success: none (fire-and-forget)
+  - Error: `NACK` with error code
 
 ### DigitalRead (`0x11`)
 
@@ -84,6 +90,9 @@ Use `Accessory` (`0x22`) + `AccessoryKey`.
 
 - Payload:
   - byte0 value
+- Response behavior:
+  - Success: none (fire-and-forget)
+  - Error: `NACK` with error code
 
 ### setCursor (`0x21`)
 
