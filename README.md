@@ -40,6 +40,18 @@ See:
 - `03-command-keys.md`
 - `05-examples.md`
 
+## Pretty Labels (Swift)
+
+For human-readable serial output, use `HablaPrettyCatalog`:
+
+```swift
+let label = HablaPrettyCatalog.commandName(for: frame.header.command_key)
+// e.g. "Delay"
+```
+
+- On Apple platforms, labels are resolved from `Localizable.xcstrings` in the `Habla` module bundle.
+- On non-Apple platforms, the API falls back to built-in English strings.
+
 ## Build
 
 Swift package:

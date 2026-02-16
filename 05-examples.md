@@ -109,3 +109,12 @@ Example response payload:
 ```text
 00 06 43 6f 73 61 4f 53 05 30 2e 31 2e 30 03 00 00 00 04 70 69 63 6f
 ```
+
+## 7) Pretty command labels (Swift)
+
+```swift
+import Habla
+
+let command = HablaPrettyCatalog.commandName(for: CommandKey.delay)  // "Delay"
+let dynamic = HablaPrettyCatalog.commandName(for: 0x12)              // "Digital Write"
+```

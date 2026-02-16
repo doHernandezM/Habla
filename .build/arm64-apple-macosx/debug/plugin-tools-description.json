@@ -3,7 +3,34 @@
 
   ],
   "copyCommands" : {
-
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla_Habla.bundle/Info.plist" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Info.plist"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla_Habla.bundle/Info.plist"
+        }
+      ]
+    },
+    "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla_Habla.bundle/Localizable.xcstrings" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Resources/Localizable.xcstrings"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla_Habla.bundle/Localizable.xcstrings"
+        }
+      ]
+    }
   },
   "explicitTargetDependencyImportCheckingMode" : {
     "none" : {
@@ -32,7 +59,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/HablaPrettyCatalog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<Habla-arm64-apple-macosx26.0-debug.module-resources>"
         },
         {
           "kind" : "file",
@@ -48,7 +87,9 @@
       "moduleOutputPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/Habla.swiftmodule",
       "objects" : [
         "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/CommandKeys.swift.o",
-        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o"
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/HablaPrettyCatalog.swift.o",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/resource_bundle_accessor.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -63,7 +104,7 @@
         "-j12",
         "-DSWIFT_PACKAGE",
         "-DDEBUG",
-        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
         "-Xcc",
         "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
         "-Xcc",
@@ -123,13 +164,23 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/HablaPrettyCatalog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules/Habla.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift",
-        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift"
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/HablaPrettyCatalog.swift",
+        "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/DerivedSources/resource_bundle_accessor.swift"
       ],
       "tempsPath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build",
       "wholeModuleOptimization" : false
@@ -255,6 +306,8 @@
       "-c",
       "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/CommandKeys.swift",
       "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/HablaPrettyCatalog.swift",
+      "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/DerivedSources/resource_bundle_accessor.swift",
       "-I",
       "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -269,7 +322,7 @@
       "-j12",
       "-DSWIFT_PACKAGE",
       "-DDEBUG",
-      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
       "-Xcc",
       "-fmodule-map-file=/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/HablaC.build/module.modulemap",
       "-Xcc",
@@ -430,6 +483,14 @@
         {
           "kind" : "file",
           "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/Habla.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/Sources/Habla/HablaPrettyCatalog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/DerivedSources/resource_bundle_accessor.swift"
         }
       ],
       "outputFilePath" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/sources"
@@ -476,6 +537,14 @@
         {
           "kind" : "file",
           "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/Habla.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/HablaPrettyCatalog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/cosas/Desktop/Cosas/Code/Habla/.build/arm64-apple-macosx/debug/Habla.build/resource_bundle_accessor.swift.o"
         },
         {
           "kind" : "file",

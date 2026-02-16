@@ -51,5 +51,5 @@ guard decodeStatus == 0 else {
 }
 
 print("encoded bytes: \(written)")
-print("decoded command: \(decoded.header.command_key)")
+print("decoded command: \(HablaPrettyCatalog.commandName(for: decoded.header.command_key))")
 print("decoded payload length: \(decoded.payload_length)")

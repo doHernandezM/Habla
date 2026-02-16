@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
   name: "Habla",
+  defaultLocalization: "en",
   products: [
     .library(name: "HablaC", targets: ["HablaC"]),
     .library(name: "Habla", targets: ["Habla"]),
@@ -21,7 +22,10 @@ let package = Package(
     .target(
       name: "Habla",
       dependencies: ["HablaC"],
-      path: "Sources/Habla"
+      path: "Sources/Habla",
+      resources: [
+        .process("Resources"),
+      ]
     ),
     .executableTarget(
       name: "HablaExample",
