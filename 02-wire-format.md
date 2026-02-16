@@ -31,15 +31,13 @@ All frames are binary:
 
 ## Flags
 
-- bit0 `ACK_REQUIRED`: receiver should return Ack/Nack.
-- bit1 `IS_FRAGMENT`: payload split across multiple frames.
-- bit2 `PRIORITY`: expedited handling requested.
-- bit3 `EVENT_SUBSCRIPTION`: frame modifies event subscriptions.
-- bit4..bit7 reserved (must be `0` in v1).
+- bit0 `MessageFlag.ackRequired` (`0x01`): receiver should return Ack/Nack.
+- bit1..bit7 reserved in the current implementation and should be `0` unless both endpoints agree on an extension profile.
 
 ## Fragmentation
 
-- If payload exceeds transport MTU, sender splits frame:
+- Framing fields support fragmentation (`PartIndex`/`PartCount`).
+- If payload exceeds transport MTU, sender may split frame:
   - same `Sequence`, `CommandKey`, and `AccessoryKey`,
   - `PartIndex` increments from `0`,
   - `PartCount` constant across all parts.
@@ -71,7 +69,7 @@ Nack/Response payload byte 0 is `ErrorCode` when failed:
 ## Timing Defaults
 
 - Request timeout: 250 ms (host configurable).
-- Retry count when `ACK_REQUIRED`: 2 retries.
+- Retry count when `MessageFlag.ackRequired`: 2 retries.
 - Backoff: 20 ms, then 50 ms.
 
 ## Transport Binding Notes

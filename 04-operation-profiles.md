@@ -110,7 +110,7 @@ Use `Accessory` (`0x22`) + `AccessoryKey`.
 - Payload:
   - byte0..n text UTF-8 (recommended <= 64 bytes)
 
-## 4) DeviceCMD Bus Passthrough (`0xA3`)
+## 4) `CommandKey.device` Bus Passthrough (`0xA3`)
 
 Use `AccessoryKey` to select bus.
 
@@ -164,10 +164,10 @@ Event frame (`MessageType=0x02`) examples:
 - Pin change event:
   - `CommandKey=DigitalRead`, payload: pin, value, timestamp32.
 - Bus RX event:
-  - `CommandKey=DeviceCMD`, accessory is bus key, payload contains bytes.
+  - `CommandKey=device`, accessory is bus key, payload contains bytes.
 
-Host subscribes/unsubscribes via `EVENT_SUBSCRIPTION` flag and command-specific
-payload selectors.
+Event subscription control is transport/profile-specific in the current implementation.
+If you introduce a flag-based subscription extension, document it alongside your target profile.
 
 ## 6) Capability Discovery (Required for Interop)
 

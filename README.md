@@ -1,22 +1,22 @@
 # Habla
 
-`Habla` is the binary host<->device protocol used by this workspace.
+`Habla` is a binary frame protocol and codec stack used by this workspace.
 
-This repo includes:
+This repository ships:
 
-- protocol documentation (`01` to `06` markdown files)
-- C codec/parser (`HablaC`)
-- Swift wrapper (`Habla`)
-- tiny example app (`HablaExample`)
+- `HablaC`: C codec + streaming parser
+- `Habla`: Swift wrapper + key enums + pretty labels
+- `HablaExample`: small encode/decode example
+- protocol docs (`01` to `06`)
 
-## Current Protocol Snapshot
+## Frame Snapshot
 
-- Frame magic: `0x48 0x42` (`HB`)
-- Version major: `0x01`
+- magic: `0x48 0x42` (`HB`)
+- version major: `0x01`
 - CRC: CRC-16/CCITT-FALSE
-- Transport: UART / USB CDC / BLE UART / TCP byte streams
+- transport-agnostic byte stream (UART, USB CDC, BLE UART, TCP)
 
-Primary message types:
+Message types:
 
 - Request (`0x00`)
 - Response (`0x01`)
@@ -24,33 +24,83 @@ Primary message types:
 - Ack (`0x03`)
 - Nack (`0x04`)
 
-## Ping Command (Workspace Extension)
+## Swift API
 
-- Command key: `PING` (`0x84`)
-- Request payload: empty
-- Response payload format:
-  - `status` (`0x00` for OK)
-  - length-prefixed UTF-8 `name`
-  - length-prefixed UTF-8 `version`
-  - `buildNumber` (`UInt32`, little-endian)
-  - length-prefixed UTF-8 `board`
+- `HablaCodec`
+  - `encodedSize(payloadLength:)`
+  - `makeHeader(...)`
+  - `encode(...)`
+  - `decode(...)`
+- `HablaParser`
+  - `init(storage:)`
+  - `push(_:outFrame:outFrameLength:)`
+  - `consume(frameLength:)`
+  - `reset()`
+- key enums:
+  - `CommandKey`
+  - `AccessoryKey`
+  - `MessageType`
+  - `MessageFlag` (`ackRequired`)
 
-See:
-
-- `03-command-keys.md`
-- `05-examples.md`
-
-## Pretty Labels (Swift)
-
-For human-readable serial output, use `HablaPrettyCatalog`:
+## Quick Start (Swift)
 
 ```swift
-let label = HablaPrettyCatalog.commandName(for: frame.header.command_key)
-// e.g. "Delay"
+import Habla
+import HablaC
+
+var header = HablaCodec.makeHeader(
+  flags: MessageFlag.ackRequired.rawValue,
+  messageType: MessageType.request.rawValue,
+  sequence: 0x10,
+  commandKey: CommandKey.digitalWrite.rawValue,
+  accessoryKey: AccessoryKey.digitalPin.rawValue
+)
+
+let payload: [UInt8] = [25, 1]
+var output = [UInt8](repeating: 0, count: 64)
+var written = 0
+
+let status = output.withUnsafeMutableBufferPointer { out in
+  payload.withUnsafeBufferPointer { body in
+    HablaCodec.encode(
+      header: &header,
+      payload: body.baseAddress,
+      payloadCount: body.count,
+      output: out.baseAddress,
+      outputCapacity: out.count,
+      written: &written
+    )
+  }
+}
+
+print("encode status:", status, "bytes:", written)
 ```
 
-- On Apple platforms, labels are resolved from `Localizable.xcstrings` in the `Habla` module bundle.
-- On non-Apple platforms, the API falls back to built-in English strings.
+## Pretty Labels
+
+Use `HablaPrettyCatalog` for display strings:
+
+```swift
+let label = HablaPrettyCatalog.commandName(for: CommandKey.delay)
+```
+
+- Apple platforms: resolves from `Resources/Localizable.xcstrings`.
+- other platforms: falls back to embedded English labels.
+- if a key is missing from the string catalog, fallback text is used.
+
+## Ping Extension
+
+`CommandKey.ping` (`0x84`) request payload is empty.
+
+Current response payload:
+
+- `status` (`0x00` for OK)
+- length-prefixed UTF-8 `name`
+- length-prefixed UTF-8 `version`
+- `buildNumber` (`UInt32`, little-endian)
+- length-prefixed UTF-8 `board`
+
+See `03-command-keys.md` and `05-examples.md`.
 
 ## Build
 
@@ -61,7 +111,7 @@ cd /Users/cosas/Desktop/Cosas/Code/Habla
 swift build
 ```
 
-CMake C library:
+C library:
 
 ```sh
 cd /Users/cosas/Desktop/Cosas/Code/Habla
@@ -72,8 +122,17 @@ cmake --build build
 ## Document Map
 
 - `01-habla-v1-overview.md`: goals and design principles
-- `02-wire-format.md`: frame structure, flags, CRC
+- `02-wire-format.md`: frame structure and CRC
 - `03-command-keys.md`: command/accessory registry
-- `04-operation-profiles.md`: operation payload schemas
+- `04-operation-profiles.md`: payload profile guide
 - `05-examples.md`: request/response examples
 - `06-conformance.md`: implementation checklist
+
+## Naming Notes
+
+- Project names are written as `Habla`, `Serie`, `CosaOS`, and `CosasStudio`.
+- Board family name is written as `Raspberry Pi Pico`.
+- Protocol symbol references use enum style, for example:
+  - `CommandKey.ping`
+  - `AccessoryKey.builtInLED`
+  - `MessageType.response`

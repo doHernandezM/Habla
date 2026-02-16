@@ -1,19 +1,10 @@
 # Habla v1 Command Registry
 
-This registry is based on `CosasStudio/Models/CommandKeys.swift`.
+This registry is based on `Sources/Habla/CommandKeys.swift`.
 
 ## System (0x00-0x0F)
 
-- `0x00` NULLCODE
-- `0x01` SOH (reserved opcode in v1)
-- `0x02` SOM (reserved opcode in v1)
-- `0x03` EOM (reserved opcode in v1)
-- `0x04` EOH (reserved opcode in v1)
-- `0x05` Command1 (reserved)
-- `0x06` Command2 (reserved)
-- `0x07` Command3 (reserved)
-- `0x08` Command4 (reserved)
-- `0x09` Command5 (reserved)
+- `0x00` null
 
 ## Data Movement (0x10-0x1F)
 
@@ -37,22 +28,22 @@ This registry is based on `CosasStudio/Models/CommandKeys.swift`.
 
 ## Declarations (0x30-0x3F)
 
-- `0x30` CommandDec
-- `0x31` CommentDec
-- `0x32` OperatorDec
-- `0x33` VariableDec
-- `0x34` FuncDec
-- `0x35` LetDec
-- `0x36` VarDec
-- `0x37` Space
+- `0x30` commandDeclaration
+- `0x31` commentDeclaration
+- `0x32` operatorDeclaration
+- `0x33` variableDeclaration
+- `0x34` functionDeclaration
+- `0x35` letDeclaration
+- `0x36` varDeclaration
+- `0x37` space
 
 ## Data Types and Flow (0x40-0x4F)
 
-- `0x40` StringType
-- `0x41` IntType
-- `0x42` DoubleType
-- `0x43` FloatType
-- `0x44` BoolType
+- `0x40` string
+- `0x41` int
+- `0x42` double
+- `0x43` float
+- `0x44` bool
 - `0x45` TimeInterval
 - `0x46` Delay
 - `0x47` Loop
@@ -60,46 +51,46 @@ This registry is based on `CosasStudio/Models/CommandKeys.swift`.
 
 ## Arithmetic (0x50-0x64)
 
-- `0x50` AddOp
-- `0x51` SubtractOp
-- `0x52` MultiplyOp
-- `0x53` DivideOp
-- `0x54` ModuloOp
-- `0x55` IncrementOp
-- `0x56` DecrementOp
-- `0x57` NegateOp
-- `0x58` LeftShiftOp
-- `0x59` RightShiftOp
-- `0x5A` BitwiseANDOp
-- `0x5B` BitwiseOROp
-- `0x5C` BitwiseXOROp
-- `0x5D` SquareOp
-- `0x5E` SquareRootOp
-- `0x5F` AbsoluteValueOp
-- `0x60` PowerOp
-- `0x61` LogarithmOp
-- `0x62` SinOp
-- `0x63` CosOp
-- `0x64` TanOp
+- `0x50` add
+- `0x51` subtract
+- `0x52` multiply
+- `0x53` divide
+- `0x54` modulo
+- `0x55` increment
+- `0x56` decrement
+- `0x57` negate
+- `0x58` leftShift
+- `0x59` rightShift
+- `0x5A` bitwiseAND
+- `0x5B` bitwiseOR
+- `0x5C` bitwiseXOR
+- `0x5D` square
+- `0x5E` squareRoot
+- `0x5F` absoluteValue
+- `0x60` power
+- `0x61` logarithm
+- `0x62` sin
+- `0x63` cos
+- `0x64` tan
 
 ## Logical (0x65-0x6F)
 
-- `0x65` AndOp
-- `0x66` OrOp
+- `0x65` logicalAnd
+- `0x66` logicalOr
 
 ## Comparison (0x70-0x7F)
 
-- `0x70` LessOp
-- `0x71` GreaterOp
-- `0x72` EqualsOp
+- `0x70` lessThan
+- `0x71` greaterThan
+- `0x72` equals
 
 ## Control Commands (0x80-0x8F)
 
-- `0x80` ECHO
-- `0x81` TEST
-- `0x82` HALT
-- `0x83` INTERRUPT
-- `0x84` PING
+- `0x80` echo
+- `0x81` test
+- `0x82` halt
+- `0x83` interrupt
+- `0x84` ping
 
 ### Ping (`0x84`) Response Payload (v1 extension)
 
@@ -117,21 +108,21 @@ and payload:
 
 ## Brackets (0x90-0x9F)
 
-- `0x90` LeftBracket
-- `0x91` RightBracket
+- `0x90` leftBracket
+- `0x91` rightBracket
 
 ## Custom/User (0xA0-0xAF)
 
-- `0xA0` UserCustomCMD
-- `0xA1` UnassignedCMD
-- `0xA2` PrintCMD
-- `0xA3` DeviceCMD
-- `0xA4` UICMD
-- `0xA5` UserCMD
+- `0xA0` userCustom
+- `0xA1` unassigned
+- `0xA2` print
+- `0xA3` device
+- `0xA4` ui
+- `0xA5` user
 
 ## Error Code
 
-- `0xFF` ERRORCODE
+- `0xFF` error
 
 ## AccessoryKey Registry
 
@@ -142,14 +133,14 @@ and payload:
 - `0x10` printSerial
 - `0x11` printNRF24
 - `0x1F` builtInLED
-- `0x21` setCursor
-- `0x22` backlight
-- `0x23` printLCD
+- `0x21` lcdSetCursor
+- `0x22` lcdBacklight
+- `0x23` lcdPrint
 - `0xFF` error
 
 ### Habla v1 Extensions
 
-Reserved extension classes for `DeviceCMD` and bus passthrough:
+Reserved extension classes for `CommandKey.device` (`0xA3`) bus passthrough:
 
 - `0x30` i2c0
 - `0x31` i2c1
@@ -162,3 +153,8 @@ Reserved extension classes for `DeviceCMD` and bus passthrough:
 - `0x70` adcBank
 
 Unknown extension keys must return `UNSUPPORTED_ACCESSORY`.
+
+Note:
+
+- these extension keys are profile-level conventions used with `CommandKey.device` (`0xA3`)
+- they are not currently modeled in the Swift `AccessoryKey` enum

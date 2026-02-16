@@ -31,9 +31,9 @@ Required:
 Required:
 
 - One or more of:
-  - I2C passthrough (`DeviceCMD` + `i2c0`/`i2c1`),
-  - SPI passthrough (`DeviceCMD` + `spi0`/`spi1`),
-  - UART passthrough (`DeviceCMD` + `uart0`/`uart1`).
+  - I2C passthrough (`CommandKey.device` + `i2c0`/`i2c1`),
+  - SPI passthrough (`CommandKey.device` + `spi0`/`spi1`),
+  - UART passthrough (`CommandKey.device` + `uart0`/`uart1`).
 
 ## Recommended Limits
 
@@ -50,7 +50,7 @@ Required:
 5. CRC mismatch returns `BAD_CRC` Nack when possible.
 6. Response `Sequence` equals request `Sequence`.
 7. Fragmented frames reassemble in order and verify `PartCount`.
-8. `ACK_REQUIRED` behavior is deterministic.
+8. `MessageFlag.ackRequired` behavior is deterministic.
 
 ## Test Vectors (Minimum)
 
@@ -59,7 +59,7 @@ Required:
 3. Corrupt CRC frame.
 4. Unsupported command.
 5. Fragmented two-part request and response.
-6. Timeout and retry behavior with `ACK_REQUIRED`.
+6. Timeout and retry behavior with `MessageFlag.ackRequired`.
 
 ## Reference Implementation Guidance
 
