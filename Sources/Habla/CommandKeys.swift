@@ -1,5 +1,6 @@
 import Foundation
 
+/// Primary Habla command opcode namespace.
 public enum CommandKey: UInt8, CaseIterable, Codable, Sendable {
   // System / framing adjacents
   case null = 0x00
@@ -93,6 +94,7 @@ public enum CommandKey: UInt8, CaseIterable, Codable, Sendable {
   case error = 0xFF
 }
 
+/// Secondary accessory opcode namespace used with `CommandKey.accessory`.
 public enum AccessoryKey: UInt8, CaseIterable, Codable, Sendable {
   case digitalPin = 0x01
   case analogPin = 0x02
@@ -109,10 +111,12 @@ public enum AccessoryKey: UInt8, CaseIterable, Codable, Sendable {
   case error = 0xFF
 }
 
+/// Bit-level frame flags for transport behavior.
 public enum MessageFlag: UInt8, Sendable {
   case ackRequired = 0x01
 }
 
+/// High-level Habla frame message categories.
 public enum MessageType: UInt8, CaseIterable, Codable, Sendable {
   case request = 0x00
   case response = 0x01

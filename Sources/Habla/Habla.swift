@@ -1,12 +1,15 @@
 import HablaC
 
+/// Thin Swift wrappers around the C Habla frame codec.
 public enum HablaCodec {
   @inline(__always)
+  /// Returns total encoded frame size for a payload length.
   public static func encodedSize(payloadLength: UInt16) -> Int {
     Int(habla_encoded_size(payloadLength))
   }
 
   @inline(__always)
+  /// Builds a protocol header using current Habla version constants.
   public static func makeHeader(
     flags: UInt8 = 0,
     messageType: UInt8 = 0x00,
@@ -30,6 +33,7 @@ public enum HablaCodec {
   }
 
   @inline(__always)
+  /// Encodes a full Habla frame into `output`, returning C status codes.
   public static func encode(
     header: inout habla_header_t,
     payload: UnsafePointer<UInt8>?,
@@ -57,6 +61,7 @@ public enum HablaCodec {
   }
 
   @inline(__always)
+  /// Decodes one complete Habla frame from contiguous frame bytes.
   public static func decode(
     frame: UnsafePointer<UInt8>?,
     frameLength: Int,
@@ -66,21 +71,25 @@ public enum HablaCodec {
   }
 }
 
+/// Incremental Habla parser suitable for streaming serial input.
 public struct HablaParser {
   private var parser: habla_parser_t
 
   @inline(__always)
+  /// Creates a parser with caller-provided backing storage.
   public init(storage: UnsafeMutableBufferPointer<UInt8>) {
     parser = habla_parser_t(buffer: nil, capacity: 0, length: 0)
     habla_parser_init(&parser, storage.baseAddress, storage.count)
   }
 
   @inline(__always)
+  /// Resets parser state and discards any buffered partial frame.
   public mutating func reset() {
     habla_parser_reset(&parser)
   }
 
   @inline(__always)
+  /// Pushes one byte and reports parser/frame-ready status codes.
   public mutating func push(
     _ byte: UInt8,
     outFrame: inout habla_frame_t,
@@ -93,6 +102,7 @@ public struct HablaParser {
   }
 
   @inline(__always)
+  /// Consumes bytes that were used by the last reported frame.
   public mutating func consume(frameLength: Int) {
     habla_parser_consume(&parser, frameLength)
   }

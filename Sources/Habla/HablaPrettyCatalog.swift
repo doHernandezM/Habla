@@ -2,6 +2,7 @@
 import Foundation
 #endif
 
+/// Localizable label descriptor with key and English fallback.
 public struct HablaPrettyLabel: Sendable, Hashable {
   public let localizationKey: String
   public let fallback: String
@@ -12,6 +13,7 @@ public struct HablaPrettyLabel: Sendable, Hashable {
   }
 }
 
+/// Semantic palette tokens for rendering command and accessory badges.
 public enum HablaPrettyColor: String, CaseIterable, Codable, Sendable {
   case cyan
   case blue
@@ -28,7 +30,9 @@ public enum HablaPrettyColor: String, CaseIterable, Codable, Sendable {
   case gray
 }
 
+/// Lookup catalog that maps Habla protocol enums to localized display metadata.
 public enum HablaPrettyCatalog {
+  /// Returns a localized descriptor for a `CommandKey`.
   public static func commandDescriptor(for command: CommandKey) -> HablaPrettyLabel {
     switch command {
     case .null: return .init(localizationKey: "habla.command.null", fallback: "Null")
@@ -106,6 +110,7 @@ public enum HablaPrettyCatalog {
     }
   }
 
+  /// Returns a localized descriptor for an `AccessoryKey`.
   public static func accessoryDescriptor(for accessory: AccessoryKey) -> HablaPrettyLabel {
     switch accessory {
     case .digitalPin: return .init(localizationKey: "habla.accessory.digital_pin", fallback: "Digital Pin")
@@ -120,6 +125,7 @@ public enum HablaPrettyCatalog {
     }
   }
 
+  /// Returns a localized descriptor for a frame `MessageType`.
   public static func messageTypeDescriptor(for messageType: MessageType) -> HablaPrettyLabel {
     switch messageType {
     case .request: return .init(localizationKey: "habla.message.request", fallback: "Request")
@@ -130,6 +136,7 @@ public enum HablaPrettyCatalog {
     }
   }
 
+  /// User-facing command/accessory label for known command values.
   public static func displayName(for command: CommandKey, accessory: AccessoryKey? = nil) -> String {
     if command == .accessory, let accessory {
       return accessoryName(for: accessory)
@@ -137,6 +144,7 @@ public enum HablaPrettyCatalog {
     return commandName(for: command)
   }
 
+  /// User-facing command/accessory label from raw protocol bytes.
   public static func displayName(for rawCommandKey: UInt8, rawAccessoryKey: UInt8? = nil) -> String {
     guard let command = CommandKey(rawValue: rawCommandKey) else {
       return "Unknown Command (0x\(hexByte(rawCommandKey)))"
@@ -146,6 +154,7 @@ public enum HablaPrettyCatalog {
     return displayName(for: command, accessory: accessory)
   }
 
+  /// Semantic color token for a command and optional accessory.
   public static func color(for command: CommandKey, accessory: AccessoryKey? = nil) -> HablaPrettyColor {
     switch command {
     case .accessory:
@@ -210,6 +219,7 @@ public enum HablaPrettyCatalog {
     }
   }
 
+  /// Semantic color token for raw command/accessory byte values.
   public static func color(for rawCommandKey: UInt8, rawAccessoryKey: UInt8? = nil) -> HablaPrettyColor {
     guard let command = CommandKey(rawValue: rawCommandKey) else {
       return .gray
